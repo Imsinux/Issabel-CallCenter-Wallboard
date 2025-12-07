@@ -31,13 +31,6 @@ https://github.com/user-attachments/assets/b042810d-4ef6-4132-96c2-4b5981c9fffd
     Upload these files to your server's web directory. The standard path for Issabel/FreePBX is:
     `/var/www/html/`
 
-3.  **Permissions:**
-    Make sure the web server (usually `asterisk` or `apache`) has read access to the Asterisk queue logs.
-    ```bash
-    chown -R asterisk:asterisk /var/www/html/wallboard
-    chmod +x /var/www/html/wallboard/*.php
-    ```
-    *Note: The script needs to read `/var/log/asterisk/queue_log`.*
 
 ### 🖥️ How to Use
 
