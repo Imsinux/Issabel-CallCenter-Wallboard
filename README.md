@@ -6,6 +6,10 @@
 **Advanced Real-time Wallboard for Issabel & FreePBX**
 This is a comprehensive, standalone PHP-based Wallboard designed for call centers using Asterisk-based systems like Issabel or FreePBX. It provides real-time monitoring of queues, agents, and KPIs without needing complex configurations.
 
+
+https://github.com/user-attachments/assets/e68e8d88-f142-4e75-9eab-865c9d4fae6c
+
+
 ### ✨ Features
 * **Real-time Monitoring:** Live view of waiting calls, answered calls, and abandoned calls.
 * **Agent Status:** See which agents are Available, On Call, or Paused (with pause duration).
