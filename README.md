@@ -7,7 +7,7 @@
 This is a comprehensive, standalone PHP-based Wallboard designed for call centers using Asterisk-based systems like Issabel or FreePBX. It provides real-time monitoring of queues, agents, and KPIs without needing complex configurations.
 
 
-https://github.com/user-attachments/assets/e68e8d88-f142-4e75-9eab-865c9d4fae6c
+https://github.com/user-attachments/assets/b042810d-4ef6-4132-96c2-4b5981c9fffd
 
 
 ### ✨ Features
