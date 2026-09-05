@@ -9,6 +9,8 @@ This is a comprehensive, standalone PHP-based Wallboard designed for call center
 
 <img width="1900" height="898" alt="image" src="https://github.com/user-attachments/assets/e5ad03d3-0d5c-412e-9391-1875ffbfab3d" />
 
+<img width="1898" height="845" alt="image" src="https://github.com/user-attachments/assets/678fc097-94b5-4cbb-8d11-a69f3f14fa48" />
+
 
 ### ✨ Features
 * **Real-time Monitoring:** Live view of waiting calls, answered calls, and abandoned calls.
