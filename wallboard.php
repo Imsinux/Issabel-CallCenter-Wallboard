@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $user = $_POST['username'] ?? '';
     $pass = $_POST['password'] ?? '';
 
-    if ($user === 'admin' && $pass === 'WallBorAd@2025!#$@') {
+    if ($user === 'admin' && $pass === 'WallBoard') {
         $_SESSION['logged_in'] = true;
         // REDIRECT TO WALLBOARD
         header("Location: callcenter.php");
