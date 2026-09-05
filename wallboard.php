@@ -1,15 +1,18 @@
 <?php
+
 session_start();
+
 $error = '';
 
 // CREDENTIALS:
 // Username: admin
-// Password: WallBoard
+// Password:
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $user = $_POST['username'] ?? '';
     $pass = $_POST['password'] ?? '';
 
-    if ($user === 'admin' && $pass === 'WallBoard') {
+    if ($user === 'admin' && $pass === 'WallBorAd@2025!#$@') {
         $_SESSION['logged_in'] = true;
         // REDIRECT TO WALLBOARD
         header("Location: callcenter.php");
@@ -19,124 +22,307 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Welcome - Login</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Nunito:wght@600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<title>IRAN SOLAR - Login</title>
 <style>
-    :root {
-        --bg-off: #080808; --bg-on: #1a1a1a;
-        --lamp-off: #333; --lamp-on: #fbbf24;       
-        --rope-base: #d4b483; --rope-shadow: #a17f4b;
-        --accent: #f59e0b; --neon-glow: #ffae00;
-        --transition-speed: 0.8s;
-    }
-    * { box-sizing: border-box; }
-    body { margin: 0; height: 100vh; background-color: var(--bg-off); font-family: 'Nunito', sans-serif; display: flex; justify-content: center; align-items: center; overflow: hidden; transition: background-color var(--transition-speed) ease; }
-    .scene { position: relative; display: flex; align-items: center; gap: 60px; z-index: 10; }
-    .lamp-wrapper { position: relative; width: 260px; height: 500px; z-index: 20; }
-    svg.lamp-svg { width: 100%; height: 100%; overflow: visible; }
-    .shade { fill: var(--lamp-off); transition: fill var(--transition-speed), filter var(--transition-speed); }
-    .stand { fill: #444; } .base { fill: #777; } .face-part { opacity: 0; transition: opacity 0.5s ease; }
-    .cord-group { cursor: grab; transform-origin: 100px 0; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-    .cord-group:active { transform: translateY(30px); cursor: grabbing; }
-    .rope-base { stroke: var(--rope-base); stroke-width: 6; stroke-linecap: round; fill: none; }
-    .rope-twist { stroke: var(--rope-shadow); stroke-width: 6; stroke-dasharray: 2 4; stroke-linecap: butt; fill: none; opacity: 0.6; }
-    .knot { fill: var(--rope-base); }
-    .click-area { fill: transparent; cursor: pointer; }
-    .light-cone { position: absolute; top: 150px; left: 50%; transform: translateX(-50%); width: 0; height: 0; border-left: 200px solid transparent; border-right: 200px solid transparent; border-bottom: 800px solid rgba(251, 191, 36, 0); filter: blur(40px); z-index: 1; pointer-events: none; transition: border-bottom-color var(--transition-speed) ease; margin-left: -130px; }
-    .content-wrapper { display: flex; flex-direction: column; align-items: center; position: relative; z-index: 15; }
-    .brand-title { font-family: 'Montserrat', sans-serif; font-size: 3rem; font-weight: 900; color: transparent; text-transform: uppercase; letter-spacing: 4px; margin-bottom: 25px; opacity: 0; transform: translateY(-20px); transition: all var(--transition-speed) ease; -webkit-text-stroke: 1px rgba(255,255,255,0.2); }
-    .login-card { width: 340px; padding: 40px; background: rgba(20, 20, 20, 0.95); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; opacity: 0; transform: translateY(30px); pointer-events: none; transition: all var(--transition-speed) cubic-bezier(0.25, 1, 0.5, 1); }
-    .login-card h3 { margin: 0 0 20px; color: #bbb; text-align: center; font-weight: 700;}
-    .input-field { width: 100%; padding: 14px; margin-bottom: 15px; background: #252525; border: 1px solid #444; border-radius: 8px; color: white; font-family: inherit; outline: none; transition: 0.3s; }
-    .input-field:focus { border-color: var(--accent); background: #333; }
-    .btn { width: 100%; padding: 14px; background: var(--accent); color: #000; border: none; border-radius: 8px; font-weight: 800; text-transform: uppercase; cursor: pointer; transition: 0.3s; }
-    .btn:hover { background: var(--neon-glow); box-shadow: 0 0 20px rgba(245, 158, 11, 0.5); }
-    body.is-on { background-color: var(--bg-on); }
-    body.is-on .shade { fill: var(--lamp-on); filter: drop-shadow(0 0 40px rgba(251, 191, 36, 0.6)); }
-    body.is-on .face-part { opacity: 0.8; }
-    body.is-on .light-cone { border-bottom-color: rgba(251, 191, 36, 0.1); }
-    body.is-on .brand-title { opacity: 1; transform: translateY(0); color: #fff; -webkit-text-stroke: 0; text-shadow: 0 0 15px var(--neon-glow); border-bottom: 4px solid var(--accent); padding-bottom: 10px; }
-    body.is-on .login-card { opacity: 1; transform: translateY(0); pointer-events: auto; box-shadow: 0 25px 50px rgba(0,0,0,0.5); }
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-    .github-link {
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        min-height: 100vh;
+        font-family: 'Poppins', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        background: #2d1b69;
+    }
+
+    /* -- IMAGE BACKGROUND -- */
+    .bg {
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        background-image: url('login-bg.png');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
+    /* Subtle dark overlay to ensure readability */
+    .bg::after {
+        content: '';
         position: absolute;
-        bottom: 20px;
-        right: 20px;
-        color: #777; /* Default color in dark mode */
-        text-decoration: none;
-        font-size: 14px;
+        inset: 0;
+        background: rgba(20, 10, 60, 0.35);
+    }
+
+    /* Stars */
+    .stars {
+        position: fixed;
+        inset: 0;
+        z-index: 1;
+    }
+    .star {
+        position: absolute;
+        background: #fff;
+        border-radius: 50%;
+        animation: twinkle var(--d) ease-in-out infinite alternate;
+    }
+    @keyframes twinkle {
+        from { opacity: 0.1; transform: scale(0.8); }
+        to   { opacity: 0.9; transform: scale(1.2); }
+    }
+
+    /* -- CARD -- */
+    .card-wrap {
+        position: relative;
+        z-index: 10;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .login-card {
+        width: 340px;
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 20px;
+        padding: 40px 32px 32px;
+        box-shadow:
+            0 8px 60px rgba(0,0,0,0.35),
+            inset 0 1px 0 rgba(255,255,255,0.15);
+    }
+
+    .login-card h2 {
+        text-align: center;
+        color: #fff;
+        font-size: 1.7rem;
+        font-weight: 600;
+        margin-bottom: 28px;
+        letter-spacing: 0.5px;
+        text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+    }
+
+    /* -- INPUT GROUP -- */
+    .input-group {
+        position: relative;
+        margin-bottom: 18px;
+    }
+
+    .input-group input {
+        width: 100%;
+        padding: 13px 44px 13px 16px;
+        background: rgba(255,255,255,0.12);
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 10px;
+        color: #fff;
+        font-size: 0.9rem;
+        font-family: 'Poppins', sans-serif;
+        outline: none;
+        transition: border-color 0.3s, background 0.3s;
+    }
+
+    .input-group input::placeholder {
+        color: rgba(255,255,255,0.55);
+        font-size: 0.85rem;
+    }
+
+    .input-group input:focus {
+        background: rgba(255,255,255,0.18);
+        border-color: rgba(255,255,255,0.45);
+    }
+
+    .input-icon {
+        position: absolute;
+        right: 14px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: rgba(255,255,255,0.55);
+        pointer-events: none;
+    }
+
+    /* -- REMEMBER / FORGOT -- */
+    .row-options {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 22px;
+        font-size: 0.78rem;
+        color: rgba(255,255,255,0.7);
+    }
+
+    .row-options label {
         display: flex;
         align-items: center;
-        gap: 8px;
-        transition: color 0.3s ease, transform 0.3s ease;
-        z-index: 100; /* Ensure it's on top */
+        gap: 6px;
+        cursor: pointer;
     }
-    .github-link:hover {
-        color: #fff; /* White on hover */
-        transform: scale(1.05);
+
+    .row-options input[type="checkbox"] {
+        accent-color: #a78bfa;
+        width: 14px;
+        height: 14px;
+        cursor: pointer;
     }
-    body.is-on .github-link {
-        color: #ddd; /* Lighter color when the light is on */
+
+    .row-options a {
+        color: rgba(255,255,255,0.7);
+        text-decoration: none;
+        transition: color 0.2s;
     }
-    .github-link .fa-github {
-        font-size: 1.2rem;
+
+    .row-options a:hover {
+        color: #fff;
+    }
+
+    /* -- BUTTON -- */
+    .btn-login {
+        width: 100%;
+        padding: 13px;
+        background: #fff;
+        color: #3b1f8c;
+        border: none;
+        border-radius: 50px;
+        font-size: 1rem;
+        font-weight: 600;
+        font-family: 'Poppins', sans-serif;
+        cursor: pointer;
+        letter-spacing: 0.5px;
+        transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+        margin-bottom: 20px;
+    }
+
+    .btn-login:hover {
+        background: #f0e8ff;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 28px rgba(0,0,0,0.3);
+    }
+
+    .btn-login:active {
+        transform: translateY(0);
+    }
+
+    /* -- REGISTER LINK -- */
+    .register-link {
+        text-align: center;
+        font-size: 0.8rem;
+        color: rgba(255,255,255,0.6);
+    }
+
+    .register-link a {
+        color: rgba(255,255,255,0.85);
+        font-weight: 500;
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+
+    .register-link a:hover {
+        color: #fff;
+    }
+
+    /* -- ERROR -- */
+    .error-msg {
+        background: rgba(248, 113, 113, 0.15);
+        border: 1px solid rgba(248, 113, 113, 0.35);
+        color: #fca5a5;
+        border-radius: 8px;
+        padding: 9px 12px;
+        font-size: 0.8rem;
+        text-align: center;
+        margin-bottom: 16px;
     }
 </style>
 </head>
 <body>
-    <div class="light-cone"></div>
-    <div class="scene">
-        <div class="lamp-wrapper">
-            <svg class="lamp-svg" viewBox="0 0 200 500">
-                <g class="cord-group" id="pullCord">
-                    <line x1="100" y1="140" x2="100" y2="300" class="rope-base" />
-                    <line x1="100" y1="140" x2="100" y2="300" class="rope-twist" />
-                    <path d="M94 300 C 90 310, 90 320, 100 325 C 110 320, 110 310, 106 300 Z" class="knot" />
-                    <line x1="97" y1="325" x2="95" y2="335" stroke="#d4b483" stroke-width="2" />
-                    <line x1="100" y1="325" x2="100" y2="338" stroke="#d4b483" stroke-width="2" />
-                    <line x1="103" y1="325" x2="105" y2="335" stroke="#d4b483" stroke-width="2" />
-                    <rect x="60" y="140" width="80" height="220" class="click-area" />
-                </g>
-                <rect x="94" y="140" width="12" height="260" rx="4" class="stand" />
-                <ellipse cx="100" cy="410" rx="60" ry="15" class="base" />
-                <path d="M50 140 L 150 140 L 170 40 L 30 40 Z" class="shade" />
-                <g class="face-part">
-                    <circle cx="80" cy="90" r="4" fill="#333" />
-                    <circle cx="120" cy="90" r="4" fill="#333" />
-                    <path d="M90 100 Q100 115 110 100" fill="none" stroke="#333" stroke-width="3" stroke-linecap="round" />
-                    <path d="M98 108 Q100 115 102 108" fill="#ff70a6" />
-                </g>
-            </svg>
-        </div>
-        <div class="content-wrapper">
-            <div class="brand-title">Welcome</div>
-            <div class="login-card">
-                <h3>Wallboard Access</h3>
-                <?php if($error): ?><div style="color:#ff4444;font-size:12px;text-align:center;margin-bottom:10px"><?php echo $error; ?></div><?php endif; ?>
-                <form method="post">
-                    <input type="text" name="username" class="input-field" placeholder="Username" autocomplete="off">
-                    <input type="password" name="password" class="input-field" placeholder="Password">
-                    <button type="submit" class="btn">Login</button>
-                </form>
+
+<!-- Image Background -->
+<div class="bg"></div>
+
+<!-- Stars -->
+<div class="stars" id="stars"></div>
+
+<!-- Login Card -->
+<div class="card-wrap">
+    <div class="login-card">
+        <h2>Login</h2>
+
+        <?php if ($error): ?>
+            <div class="error-msg"><?php echo htmlspecialchars($error); ?></div>
+        <?php endif; ?>
+
+        <form method="post" autocomplete="off">
+            <div class="input-group">
+                <input type="text" name="username" placeholder="Username" autocomplete="off"
+                       value="<?php echo htmlspecialchars($_POST['username'] ?? ''); ?>">
+                <span class="input-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                        <circle cx="12" cy="7" r="4"/>
+                    </svg>
+                </span>
             </div>
+
+            <div class="input-group">
+                <input type="password" name="password" placeholder="Password">
+                <span class="input-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                    </svg>
+                </span>
+            </div>
+
+            <div class="row-options">
+                <label>
+                    <input type="checkbox" name="remember"> Remember me
+                </label>
+                <a href="#">Forgot password?</a>
+            </div>
+
+            <button type="submit" class="btn-login">Login</button>
+        </form>
+
+        <div class="register-link">
+            Don't have an account? <a href="#">Register</a>
         </div>
     </div>
-    
-    <a href="https://github.com/imsinux" class="github-link" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-github"></i> 
-        imsinux
-    </a>
+</div>
 
 <script>
-    const cord = document.getElementById('pullCord');
-    cord.addEventListener('click', () => document.body.classList.toggle('is-on'));
-    <?php if($error): ?>document.body.classList.add('is-on');<?php endif; ?>
+    // Generate stars
+    (function() {
+        const container = document.getElementById('stars');
+        const count = 120;
+        for (let i = 0; i < count; i++) {
+            const s = document.createElement('div');
+            s.className = 'star';
+            const size = Math.random() * 2.5 + 0.5;
+            s.style.cssText = `
+                width:${size}px; height:${size}px;
+                left:${Math.random()*100}%;
+                top:${Math.random()*70}%;
+                --d:${(Math.random()*3+1.5).toFixed(1)}s;
+                animation-delay:${(Math.random()*4).toFixed(1)}s;
+            `;
+            container.appendChild(s);
+        }
+    })();
 </script>
 </body>
 </html>
